@@ -5,6 +5,16 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
 
+    @Test
+    public void shouldRadio() {
+
+        Radio rad = new Radio(10);
+
+        rad.setCurrentFMStation(10);
+
+        Assertions.assertEquals(9, rad.getCurrentFMStation());
+    }
+
     @Test //#1 - Проверка граничного значения -1
     public void shouldSetStationToMinus1() {
 
@@ -12,10 +22,7 @@ public class RadioTest {
 
         rad.setCurrentFMStation(-1);
 
-        int expected = 0;
-        int actual = rad.getCurrentFMStation();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(0, rad.getCurrentFMStation());
     }
 
     @Test //#2 - Проверка граничного значения 0
@@ -25,10 +32,7 @@ public class RadioTest {
 
         rad.setCurrentFMStation(0);
 
-        int expected = 0;
-        int actual = rad.getCurrentFMStation();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(0, rad.getCurrentFMStation());
     }
 
     @Test //#3 - Проверка граничного значения 1
@@ -38,10 +42,7 @@ public class RadioTest {
 
         rad.setCurrentFMStation(1);
 
-        int expected = 1;
-        int actual = rad.getCurrentFMStation();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(1, rad.getCurrentFMStation());
     }
 
     @Test //#4 - Проверка граничного значения 8
@@ -51,10 +52,7 @@ public class RadioTest {
 
         rad.setCurrentFMStation(8);
 
-        int expected = 8;
-        int actual = rad.getCurrentFMStation();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(8, rad.getCurrentFMStation());
     }
 
     @Test //#5 - Проверка граничного значения 9
@@ -64,10 +62,7 @@ public class RadioTest {
 
         rad.setCurrentFMStation(9);
 
-        int expected = 9;
-        int actual = rad.getCurrentFMStation();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(9, rad.getCurrentFMStation());
     }
 
     @Test //#6 - Проверка граничного значения 10
@@ -77,10 +72,7 @@ public class RadioTest {
 
         rad.setCurrentFMStation(10);
 
-        int expected = 9;
-        int actual = rad.getCurrentFMStation();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(9, rad.getCurrentFMStation());
     }
 
     @Test //#7 - Проверка граничного значения -1
@@ -90,10 +82,7 @@ public class RadioTest {
 
         rad.setCurrentVolume(-1);
 
-        int expected = 0;
-        int actual = rad.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(0, rad.getCurrentVolume());
     }
 
     @Test //#8 - Проверка граничного значения 0
@@ -103,10 +92,7 @@ public class RadioTest {
 
         rad.setCurrentVolume(0);
 
-        int expected = 0;
-        int actual = rad.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(0, rad.getCurrentVolume());
     }
 
     @Test //#9 - Проверка граничного значения 1
@@ -116,10 +102,7 @@ public class RadioTest {
 
         rad.setCurrentVolume(1);
 
-        int expected = 1;
-        int actual = rad.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(1, rad.getCurrentVolume());
     }
 
     @Test //#10 - Проверка граничного значения 99
@@ -129,10 +112,7 @@ public class RadioTest {
 
         rad.setCurrentVolume(99);
 
-        int expected = 99;
-        int actual = rad.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(99, rad.getCurrentVolume());
     }
 
     @Test //#11 - Проверка граничного значения 100
@@ -142,10 +122,7 @@ public class RadioTest {
 
         rad.setCurrentVolume(100);
 
-        int expected = 100;
-        int actual = rad.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(100, rad.getCurrentVolume());
     }
 
     @Test //#12 - Проверка граничного значения 101
@@ -155,10 +132,7 @@ public class RadioTest {
 
         rad.setCurrentVolume(101);
 
-        int expected = 100;
-        int actual = rad.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(100, rad.getCurrentVolume());
     }
 
     @Test //#13 - Проверка перехода с 0 на 1, при нажатии кнопки next
@@ -169,10 +143,7 @@ public class RadioTest {
         rad.setCurrentFMStation(0);
         rad.nextStation();
 
-        int expected = 1;
-        int actual = rad.getCurrentFMStation();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(1, rad.getCurrentFMStation());
 
     }
 
@@ -184,10 +155,7 @@ public class RadioTest {
         rad.setCurrentFMStation(1);
         rad.nextStation();
 
-        int expected = 2;
-        int actual = rad.getCurrentFMStation();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(2, rad.getCurrentFMStation());
 
     }
 
@@ -199,10 +167,7 @@ public class RadioTest {
         rad.setCurrentFMStation(8);
         rad.nextStation();
 
-        int expected = 9;
-        int actual = rad.getCurrentFMStation();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(9, rad.getCurrentFMStation());
 
     }
 
@@ -214,10 +179,7 @@ public class RadioTest {
         rad.setCurrentFMStation(9);
         rad.nextStation();
 
-        int expected = 0;
-        int actual = rad.getCurrentFMStation();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(0, rad.getCurrentFMStation());
 
     }
 
@@ -229,10 +191,7 @@ public class RadioTest {
         rad.setCurrentFMStation(0);
         rad.prevStation();
 
-        int expected = 9;
-        int actual = rad.getCurrentFMStation();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(9, rad.getCurrentFMStation());
 
     }
 
@@ -244,10 +203,7 @@ public class RadioTest {
         rad.setCurrentFMStation(9);
         rad.prevStation();
 
-        int expected = 8;
-        int actual = rad.getCurrentFMStation();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(8, rad.getCurrentFMStation());
 
     }
 
@@ -259,10 +215,7 @@ public class RadioTest {
         rad.setCurrentFMStation(2);
         rad.prevStation();
 
-        int expected = 1;
-        int actual = rad.getCurrentFMStation();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(1, rad.getCurrentFMStation());
 
     }
 
@@ -274,10 +227,7 @@ public class RadioTest {
         rad.setCurrentFMStation(1);
         rad.prevStation();
 
-        int expected = 0;
-        int actual = rad.getCurrentFMStation();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(0, rad.getCurrentFMStation());
 
     }
 
@@ -289,10 +239,7 @@ public class RadioTest {
         rad.setCurrentVolume(0);
         rad.increaseVolume();
 
-        int expected = 1;
-        int actual = rad.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(1, rad.getCurrentVolume());
 
     }
 
@@ -304,10 +251,7 @@ public class RadioTest {
         rad.setCurrentVolume(1);
         rad.increaseVolume();
 
-        int expected = 2;
-        int actual = rad.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(2, rad.getCurrentVolume());
 
     }
 
@@ -319,10 +263,7 @@ public class RadioTest {
         rad.setCurrentVolume(98);
         rad.increaseVolume();
 
-        int expected = 99;
-        int actual = rad.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(99, rad.getCurrentVolume());
 
     }
 
@@ -334,10 +275,7 @@ public class RadioTest {
         rad.setCurrentVolume(99);
         rad.increaseVolume();
 
-        int expected = 100;
-        int actual = rad.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(100, rad.getCurrentVolume());
 
     }
 
@@ -349,10 +287,7 @@ public class RadioTest {
         rad.setCurrentVolume(101);
         rad.increaseVolume();
 
-        int expected = 100;
-        int actual = rad.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(100, rad.getCurrentVolume());
 
     }
 
@@ -365,10 +300,7 @@ public class RadioTest {
         rad.setCurrentVolume(100);
         rad.decreaseVolume();
 
-        int expected = 99;
-        int actual = rad.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(99, rad.getCurrentVolume());
 
     }
 
@@ -380,10 +312,7 @@ public class RadioTest {
         rad.setCurrentVolume(99);
         rad.decreaseVolume();
 
-        int expected = 98;
-        int actual = rad.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(98, rad.getCurrentVolume());
 
     }
 
@@ -395,10 +324,7 @@ public class RadioTest {
         rad.setCurrentVolume(2);
         rad.decreaseVolume();
 
-        int expected = 1;
-        int actual = rad.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(1, rad.getCurrentVolume());
 
     }
 
@@ -410,10 +336,7 @@ public class RadioTest {
         rad.setCurrentVolume(1);
         rad.decreaseVolume();
 
-        int expected = 0;
-        int actual = rad.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(0, rad.getCurrentVolume());
 
     }
 
@@ -425,10 +348,7 @@ public class RadioTest {
         rad.setCurrentVolume(0);
         rad.decreaseVolume();
 
-        int expected = 0;
-        int actual = rad.getCurrentVolume();
-
-        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(0, rad.getCurrentVolume());
 
     }
 
